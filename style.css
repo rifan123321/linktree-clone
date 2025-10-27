@@ -1,0 +1,158 @@
+/* Reset dasar */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Poppins', sans-serif;
+  color: #ffffff;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+
+  /* ===== GANTI BACKGROUND ===== */
+  background: url("bg.jpg") no-repeat center center/cover;
+  /* supaya teks tetap terbaca, tambahkan lapisan gelap */
+  position: relative;
+}
+
+/* lapisan hitam transparan di atas foto */
+body::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55); /* tingkat kegelapan 0-1 */
+  z-index: -1;
+}
+
+.container {
+  width: 100%;
+  max-width: 480px;
+  text-align: center;
+}
+
+/* Avatar bulat */
+.avatar {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 5px solid #47373720;
+  margin-bottom: 1rem;
+  border-color: #a3a3a3;
+}
+
+/* Nama & bio */
+h1 {
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.bio {
+  font-size: 0.95rem;
+  color: #c4c4c4;
+  margin-bottom: 2rem;
+}
+
+/* Tombol link */
+.link-btn {
+  display: block;
+  background: #1f1f1f;
+  color: #ffffff;
+  text-decoration: none;
+  padding: 1rem 1.5rem;
+  margin: 0.75rem 0;
+  border-radius: 10px;
+  font-weight: 500;
+  transition: background 0.25s ease, transform 0.15s ease;
+  border: 1px solid #2c2c2c;
+}
+
+.link-btn:hover {
+  background: #2a2a2a;
+  transform: translateY(-2px);
+}
+
+.link-btn i {
+  margin-right: 0.5rem;
+}
+
+/* Footer */
+footer {
+  margin-top: 2.5rem;
+  font-size: 0.75rem;
+  color: #0e0d0d;
+}
+
+footer a {
+  color: #bbbbbb;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* Responsif kecil */
+@media (max-width: 400px) {
+  h1 { font-size: 1.4rem; }
+  .link-btn { font-size: 0.95rem; }
+}
+
+/* ===== ABOUT ME BOX ===== */
+.about-box {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+  padding: 1.25rem 1.5rem;
+  margin: 1.5rem 0 2rem;
+  text-align: left;        /* biar enak dibaca */
+  max-height: 220px;       /* batas tinggi sebelum scroll */
+  overflow-y: auto;        /* scroll otomatis kalau panjang */
+  backdrop-filter: blur(6px); /* efek kaca (optional) */
+}
+
+.about-box h2 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.6rem;
+  color: #ffffff;
+}
+
+.about-box p {
+  font-size: 0.9rem;
+  line-height: 1.55;
+  color: #dddddd;
+  margin-bottom: 0.75rem;
+}
+
+/* Scrollbar tipis gelap (supaya tak mengganggu) */
+.about-box::-webkit-scrollbar {
+  width: 5px;
+}
+.about-box::-webkit-scrollbar-thumb {
+  background: rgba(255,255,255,0.25);
+  border-radius: 4px;
+}
+
+/* Tombol kembali */
+.back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 1.2rem;   /* jarak atas */
+  padding: 0.6rem 1.2rem;
+  background: rgba(255, 255, 255, 0.10);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 8px;
+  color: #ffffff;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: background 0.25s ease, transform 0.15s ease;
+}
+
+.back-btn:hover {
+  background: rgba(255, 255, 255, 0.18);
+  transform: translateY(-2px);
+}
